@@ -1,0 +1,2480 @@
+@prefix : <http://example.org/medical-devices-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/medical-devices-ontology#> .
+
+<http://example.org/medical-devices-ontology> rdf:type owl:Ontology ;
+                                               <http://purl.org/dc/terms/creator> "Rafael Montesinos Cano" ;
+                                               <http://purl.org/dc/terms/description> "An ontology for modelling medical devices, safety incidents, risk classifications, manufacturers, regulatory frameworks and corrective actions in the medical device domain."@en ;
+                                               <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                               <http://purl.org/dc/terms/title> "Medical Devices Safety Ontology"@en ;
+                                               rdfs:comment "Ontology for representing medical devices, incidents, risks, manufacturers, regulatory frameworks and corrective actions."@en ;
+                                               rdfs:label "Medical Devices Safety Ontology"@en ;
+                                               owl:versionInfo "1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/medical-devices-ontology#affectsDeviceType
+:affectsDeviceType rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Risk ;
+                   rdfs:range :DeviceType ;
+                   rdfs:label "Links a risk to a type of device affected by it"@en ,
+                              "affects device type"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasCorrectiveAction
+:hasCorrectiveAction rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Incident ;
+                     rdfs:range :CorrectiveAction ;
+                     rdfs:comment "Links an incident to the corrective action taken in response"@en ;
+                     rdfs:label "has corrective action"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasFSCAStatus
+:hasFSCAStatus rdf:type owl:ObjectProperty ;
+               rdfs:domain :CorrectiveAction ;
+               rdfs:range :FSCAStatus ;
+               rdfs:comment "Links a corrective action to its FSCA status"@en ;
+               rdfs:label "has FSCA status"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasFSCAType
+:hasFSCAType rdf:type owl:ObjectProperty ;
+             rdfs:domain :CorrectiveAction ;
+             rdfs:range :FSCAType ;
+             rdfs:comment "Links a corrective action to its FSCA type"@en ;
+             rdfs:label "has FSCA type"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasIncident
+:hasIncident rdf:type owl:ObjectProperty ;
+             rdfs:domain :MedicalDevice ;
+             rdfs:range :Incident ;
+             rdfs:comment "Links a medical device to an incident associated with it"@en ;
+             rdfs:label "has incident"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasManufacturer
+:hasManufacturer rdf:type owl:ObjectProperty ;
+                 rdfs:domain :MedicalDevice ;
+                 rdfs:range :Manufacturer ;
+                 rdfs:comment "Links a medical device to its manufacturer"@en ;
+                 rdfs:label "has manufacturer"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasRiskClass
+:hasRiskClass rdf:type owl:ObjectProperty ;
+              rdfs:domain :MedicalDevice ;
+              rdfs:range :RiskClass ;
+              rdfs:comment "Links a medical device to its regulatory risk class"@en ;
+              rdfs:label "has risk class"@en .
+
+
+###  http://example.org/medical-devices-ontology#relatedRisk
+:relatedRisk rdf:type owl:ObjectProperty ;
+             rdfs:domain :Incident ;
+             rdfs:range :Risk ;
+             rdfs:comment "Links an incident to a risk"@en ;
+             rdfs:label "related risk"@en .
+
+
+###  http://example.org/medical-devices-ontology#reportedBy
+:reportedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Incident ;
+            rdfs:range :Manufacturer ;
+            rdfs:comment "Links an incident to the reporting manufacturer"@en ;
+            rdfs:label "reported by"@en .
+
+
+###  http://example.org/medical-devices-ontology#subjectToCorrectiveAction
+:subjectToCorrectiveAction rdf:type owl:ObjectProperty ;
+                           rdfs:domain :MedicalDevice ;
+                           rdfs:range :CorrectiveAction ;
+                           rdfs:label "Links a medical device to a corrective action associated through an incident"@en ,
+                                      "subject to corrective action"@en .
+
+
+###  http://example.org/medical-devices-ontology#underRegulatoryFramework
+:underRegulatoryFramework rdf:type owl:ObjectProperty ;
+                          rdfs:domain :MedicalDevice ;
+                          rdfs:range :RegulatoryFramework ;
+                          rdfs:comment "Links a medical device to the regulatory framework that applies to it"@en ;
+                          rdfs:label "under regulatory framework"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/medical-devices-ontology#correctiveActionTaken
+:correctiveActionTaken rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Incident ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "Indicates whether a corrective action was taken for the incident"@en ;
+                       rdfs:label "corrective action taken"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasActionDate
+:hasActionDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :CorrectiveAction ;
+               rdfs:range xsd:date ;
+               rdfs:comment "Stores the date on which a corrective action started"@en ;
+               rdfs:label "has action date"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasAffectedDeviceTypeText
+:hasAffectedDeviceTypeText rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Risk ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Stores the textual value of the affected device type"@en ;
+                           rdfs:label "has affected device type text"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasAuthorizationNumber
+:hasAuthorizationNumber rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Manufacturer ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Stores the regulatory authorization number of a manufacturer"@en ;
+                        rdfs:label "has authorization number"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasClosureDate
+:hasClosureDate rdf:type owl:DatatypeProperty ;
+                rdfs:domain :CorrectiveAction ;
+                rdfs:range xsd:date ;
+                rdfs:comment "Stores the date on which a corrective action was closed"@en ;
+                rdfs:label "has closure date"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasCompetentAuthority
+:hasCompetentAuthority rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Manufacturer ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Stores the competent authority associated with a manufacturer"@en ;
+                       rdfs:label "has competent authority"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasContactEmail
+:hasContactEmail rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Manufacturer ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Stores the contact email of a manufacturer"@en ;
+                 rdfs:label "has contact email"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasCountriesAffected
+:hasCountriesAffected rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :CorrectiveAction ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Stores the countries affected by a corrective action"@en ;
+                      rdfs:label "has countries affected"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasCountry
+:hasCountry rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Manufacturer ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Stores the country where a manufacturer is located"@en ;
+            rdfs:label "has country"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasCountryReported
+:hasCountryReported rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Incident ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Stores the country where the incident was reported"@en ;
+                    rdfs:label "has country reported"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasDetectionDate
+:hasDetectionDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Incident ;
+                  rdfs:range xsd:date ;
+                  rdfs:comment "Stores the date on which an incident was detected."@en ;
+                  rdfs:label "has detection date"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasDeviceID
+:hasDeviceID rdf:type owl:DatatypeProperty ;
+             rdfs:domain :MedicalDevice ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Stores the identifier of a manufacturer"@en ;
+             rdfs:label "has device ID"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasDeviceName
+:hasDeviceName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :MedicalDevice ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Stores the commercial name of a medical device"@en ;
+               rdfs:label "has device name"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasDeviceTypeText
+:hasDeviceTypeText rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :MedicalDevice ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Stores the textual value of the device type"@en ;
+                   rdfs:label "has device type text"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasDevicesAffected
+:hasDevicesAffected rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :CorrectiveAction ;
+                    rdfs:range xsd:int ;
+                    rdfs:comment "Stores the number of devices affected by a corrective action"@en ;
+                    rdfs:label "has devices affected"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasEUDAMEDFSCARef
+:hasEUDAMEDFSCARef rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :CorrectiveAction ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Stores the EUDAMED reference of a corrective action"@en ;
+                   rdfs:label "has EUDAMED FSCA reference"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasEUDAMEDIncidentRef
+:hasEUDAMEDIncidentRef rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Incident ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Stores the EUDAMED reference of an incident"@en ;
+                       rdfs:label "has EUDAMED incident reference"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasEUDAMEDSRN
+:hasEUDAMEDSRN rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Manufacturer ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Stores the EUDAMED SRN of a manufacturer."@en ;
+               rdfs:label "has EUDAMED SRN"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasEventDate
+:hasEventDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Incident ;
+              rdfs:range xsd:date ;
+              rdfs:comment "Stores the date on which the incident event occurred."@en ;
+              rdfs:label "has event date"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasFSCADescription
+:hasFSCADescription rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :CorrectiveAction ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Stores the description of a corrective action"@en ;
+                    rdfs:label "has FSCA description"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasFSCAID
+:hasFSCAID rdf:type owl:DatatypeProperty ;
+           rdfs:domain :CorrectiveAction ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Stores the identifier of a field safety corrective action"@en ;
+           rdfs:label "has FSCA ID"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasIMDRFCode
+:hasIMDRFCode rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Risk ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Stores the IMDRF code assigned to a risk"@en ;
+              rdfs:label "has IMDRF code"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasIncidentDescription
+:hasIncidentDescription rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Incident ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Stores the description of an incident"@en ;
+                        rdfs:label "has incident description"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasIncidentID
+:hasIncidentID rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Incident ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Stores the identifier of an incident."@en ;
+               rdfs:label "has incident ID"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasIncidentTypeText
+:hasIncidentTypeText rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Incident ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Stores the textual value of the incident type"@en ;
+                     rdfs:label "has incident type text" .
+
+
+###  http://example.org/medical-devices-ontology#hasIntendedPurpose
+:hasIntendedPurpose rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :MedicalDevice ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Stores the intended purpose of a medical device"@en ;
+                    rdfs:label "has intended purpose"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasManufacturerID
+:hasManufacturerID rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Manufacturer ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Stores the identifier of a manufacturer."@en ;
+                   rdfs:label "has manufacturer ID"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasManufacturerName
+:hasManufacturerName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Manufacturer ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Stores the name of a manufacturer"@en ;
+                     rdfs:label "has manufacturer name"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasOutcome
+:hasOutcome rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Incident ;
+            rdfs:range xsd:string ;
+            rdfs:label "Stores the outcome of an incident"@en ,
+                       "has outcome"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasPatientAge
+:hasPatientAge rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Incident ;
+               rdfs:range xsd:int ;
+               rdfs:comment "Stores the age of the patient associated with an incident"@en ;
+               rdfs:label "has patient age"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasPatientSex
+:hasPatientSex rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Incident ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Stores the sex of the patient associated with an incident"@en ;
+               rdfs:label "has patient sex"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasProbabilityText
+:hasProbabilityText rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Risk ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Stores the textual value of the probability level"@en ;
+                    rdfs:label "has probability text" .
+
+
+###  http://example.org/medical-devices-ontology#hasReportDate
+:hasReportDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Incident ;
+               rdfs:range xsd:date ;
+               rdfs:comment "Stores the date on which an incident was reported."@en ;
+               rdfs:label "has report date"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasRiskCategoryText
+:hasRiskCategoryText rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Risk ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Stores the textual value of the risk category"@en ;
+                     rdfs:label "has risk category text"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasRiskDescription
+:hasRiskDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Risk ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Stores the description of a risk"@en ;
+                    rdfs:label "has risk description"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasRiskID
+:hasRiskID rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Risk ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Stores the identifier of a risk"@en ;
+           rdfs:label "has risk ID"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasRiskName
+:hasRiskName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Risk ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Stores the name of a risk"@en ;
+             rdfs:label "has risk name"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasRiskTypeText
+:hasRiskTypeText rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Risk ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Stores the textual value of the risk type"@en ;
+                 rdfs:label "has risk type text"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasScope
+:hasScope rdf:type owl:DatatypeProperty ;
+          rdfs:domain :CorrectiveAction ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Stores the scope of a corrective action"@en ;
+          rdfs:label "has scope"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasSeverityText
+:hasSeverityText rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Risk ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Stores the textual value of the severity level"@en ;
+                 rdfs:label "has severity text"@en .
+
+
+###  http://example.org/medical-devices-ontology#hasUDIDI
+:hasUDIDI rdf:type owl:DatatypeProperty ;
+          rdfs:domain :MedicalDevice ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Stores the UDI-DI of a medical device"@en ;
+          rdfs:label "has UDI-DI"@en .
+
+
+###  http://example.org/medical-devices-ontology#isActive
+:isActive rdf:type owl:DatatypeProperty ;
+          rdfs:domain :MedicalDevice ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "Indicates whether the device is active"@en ;
+          rdfs:label "is active"@en .
+
+
+###  http://example.org/medical-devices-ontology#isIVD
+:isIVD rdf:type owl:DatatypeProperty ;
+       rdfs:domain :MedicalDevice ;
+       rdfs:range xsd:boolean ;
+       rdfs:label "Indicates whether the device is an in vitro diagnostic device"@en ,
+                  "is IVD"@en .
+
+
+###  http://example.org/medical-devices-ontology#isImplantable
+:isImplantable rdf:type owl:DatatypeProperty ;
+               rdfs:domain :MedicalDevice ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Indicates whether the device is implantabl"@en ;
+               rdfs:label "is implantable"@en .
+
+
+###  http://example.org/medical-devices-ontology#isReusable
+:isReusable rdf:type owl:DatatypeProperty ;
+            rdfs:domain :MedicalDevice ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Indicates whether the device is reusable."@en ;
+            rdfs:label "is reusable"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/medical-devices-ontology#ActiveDevice
+:ActiveDevice rdf:type owl:Class ;
+              rdfs:subClassOf :MedicalDevice ;
+              rdfs:comment "A medical device that depends on a source of energy for its operation"@en ;
+              rdfs:label "Active Device"@en .
+
+
+###  http://example.org/medical-devices-ontology#CorrectiveAction
+:CorrectiveAction rdf:type owl:Class ;
+                  rdfs:comment "An action taken in response to an incident"@en ;
+                  rdfs:label "Corrective Action"@en .
+
+
+###  http://example.org/medical-devices-ontology#DeviceType
+:DeviceType rdf:type owl:Class ;
+            rdfs:comment "A category describing the type of a medical device"@en ;
+            rdfs:label "Device Type"@en .
+
+
+###  http://example.org/medical-devices-ontology#FSCAStatus
+:FSCAStatus rdf:type owl:Class ;
+            rdfs:comment "The status of a corrective action"@en ;
+            rdfs:label "FSCA Status"@en .
+
+
+###  http://example.org/medical-devices-ontology#FSCAType
+:FSCAType rdf:type owl:Class ;
+          rdfs:comment "A type of field safety corrective action"@en ;
+          rdfs:label "FSCA Type"@en .
+
+
+###  http://example.org/medical-devices-ontology#HighRiskDevice
+:HighRiskDevice rdf:type owl:Class ;
+                rdfs:subClassOf :MedicalDevice ;
+                rdfs:comment "A medical device considered high risk according to regulatory classification"@en ;
+                rdfs:label "High-Risk Device"@en .
+
+
+###  http://example.org/medical-devices-ontology#ImplantableDevice
+:ImplantableDevice rdf:type owl:Class ;
+                   rdfs:subClassOf :MedicalDevice ;
+                   rdfs:comment "medical device intended to be implanted in the human body"@en ;
+                   rdfs:label "Implantable Device"@en .
+
+
+###  http://example.org/medical-devices-ontology#InSituCorrection
+:InSituCorrection rdf:type owl:Class ;
+                  rdfs:subClassOf :FSCAType ;
+                  rdfs:comment "A corrective action performed directly on the affected device or system"@en ;
+                  rdfs:label "In Situ Correction"@en .
+
+
+###  http://example.org/medical-devices-ontology#InVitroDiagnosticDevice
+:InVitroDiagnosticDevice rdf:type owl:Class ;
+                         rdfs:subClassOf :MedicalDevice ;
+                         rdfs:comment "A medical device used for in vitro diagnostic purposes"@en ;
+                         rdfs:label "In Vitro Diagnostic Device"@en .
+
+
+###  http://example.org/medical-devices-ontology#Incident
+:Incident rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :relatedRisk ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Risk
+                          ] ;
+          rdfs:comment "A reported incident involving in a medical device"@en ;
+          rdfs:label "Incident"@en .
+
+
+###  http://example.org/medical-devices-ontology#IncidentType
+:IncidentType rdf:type owl:Class ;
+              rdfs:comment "A category describing the type of an incident"@en ;
+              rdfs:label "Incident Type"@en .
+
+
+###  http://example.org/medical-devices-ontology#ManagedIncident
+:ManagedIncident rdf:type owl:Class ;
+                 rdfs:comment "An incident that has an associated corrective action"@en ;
+                 rdfs:label "Managed Incident"@en .
+
+
+###  http://example.org/medical-devices-ontology#Manufacturer
+:Manufacturer rdf:type owl:Class ;
+              rdfs:comment "An organization responsible for manufacturing a medical device"@en ;
+              rdfs:label "Manufacturer"@en ;
+              rdfs:seeAlso "http://xmlns.com/foaf/0.1/Organization"@en .
+
+
+###  http://example.org/medical-devices-ontology#MedicalDevice
+:MedicalDevice rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasManufacturer ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Manufacturer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasDeviceID ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ;
+               rdfs:comment "A medical device represented in the ontology"@en ;
+               rdfs:label "Medical Device"@en ;
+               rdfs:seeAlso "https://schema.org/MedicalDevice"@en .
+
+
+###  http://example.org/medical-devices-ontology#OpenCorrectiveAction
+:OpenCorrectiveAction rdf:type owl:Class ;
+                      rdfs:comment "A corrective action whose status is open"@en ;
+                      rdfs:label "Open Corrective Action"@en .
+
+
+###  http://example.org/medical-devices-ontology#ProbabilityLevel
+:ProbabilityLevel rdf:type owl:Class ;
+                  rdfs:comment "A probability level associated with a risk"@en ;
+                  rdfs:label "Probability Level"@en .
+
+
+###  http://example.org/medical-devices-ontology#Recall
+:Recall rdf:type owl:Class ;
+        rdfs:subClassOf :FSCAType ;
+        rdfs:comment "A corrective action involving the recall of affected products"@en ;
+        rdfs:label "Recall"@en .
+
+
+###  http://example.org/medical-devices-ontology#RegulatoryFramework
+:RegulatoryFramework rdf:type owl:Class ;
+                     rdfs:comment "A European regulatory framework applicable to a medical device"@en ;
+                     rdfs:label "Regulatory Framework"@en .
+
+
+###  http://example.org/medical-devices-ontology#ReusableDevice
+:ReusableDevice rdf:type owl:Class ;
+                rdfs:subClassOf :MedicalDevice ;
+                rdfs:comment "A medical device intended for repeated use"@en ;
+                rdfs:label "Reusable Device"@en .
+
+
+###  http://example.org/medical-devices-ontology#Risk
+:Risk rdf:type owl:Class ;
+      rdfs:comment "A risk associated with a medical device"@en ;
+      rdfs:label "Risk"@en .
+
+
+###  http://example.org/medical-devices-ontology#RiskCategory
+:RiskCategory rdf:type owl:Class ;
+              rdfs:comment "A conceptual category used to classify risks"@en ;
+              rdfs:label "Risk Category"@en .
+
+
+###  http://example.org/medical-devices-ontology#RiskClass
+:RiskClass rdf:type owl:Class ;
+           rdfs:comment "A regulatory risk class assigned to a medical device"@en ;
+           rdfs:label "Risk Class"@en .
+
+
+###  http://example.org/medical-devices-ontology#RiskType
+:RiskType rdf:type owl:Class ;
+          rdfs:comment "A conceptual type used to classify risks"@en ;
+          rdfs:label "Risk Type"@en .
+
+
+###  http://example.org/medical-devices-ontology#SafetyAlert
+:SafetyAlert rdf:type owl:Class ;
+             rdfs:subClassOf :FSCAType ;
+             rdfs:comment "A corrective action consisting of a safety alert"@en ;
+             rdfs:label "Safety Alert"@en .
+
+
+###  http://example.org/medical-devices-ontology#Severity
+:Severity rdf:type owl:Class ;
+          rdfs:comment "A severity level associated with a risk"@en ;
+          rdfs:label "Severity"@en .
+
+
+###  http://example.org/medical-devices-ontology#UserNotice
+:UserNotice rdf:type owl:Class ;
+            rdfs:subClassOf :FSCAType ;
+            rdfs:comment "A corrective action consisting of a notice or communication to users"@en ;
+            rdfs:label "User Notice"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/medical-devices-ontology#DEV_001
+:DEV_001 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_001 ,
+                      :INC_016 ;
+         :hasManufacturer :MAN_001 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-001" ;
+         :hasDeviceName "HeartMate 3 LVAD" ;
+         :hasDeviceTypeText "ImplantableActiveDevice" ;
+         :hasIntendedPurpose "Ventricular assist device for end-stage heart failure" ;
+         :hasUDIDI "(01)00380740009095" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "HeartMate 3 LVAD" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_002
+:DEV_002 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_002 ;
+         :hasManufacturer :MAN_001 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-002" ;
+         :hasDeviceName "Micra AV Transcatheter Pacing System" ;
+         :hasDeviceTypeText "ActiveImplant" ;
+         :hasIntendedPurpose "Leadless cardiac pacemaker for atrioventricular synchrony" ;
+         :hasUDIDI "(01)00380740009112" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Micra AV Transcatheter Pacing System" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_003
+:DEV_003 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_003 ;
+         :hasManufacturer :MAN_002 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-003" ;
+         :hasDeviceName "Portico Transcatheter Heart Valve" ;
+         :hasDeviceTypeText "ImplantableDevice" ;
+         :hasIntendedPurpose "Transcatheter aortic valve replacement (TAVI)" ;
+         :hasUDIDI "(01)00800002222291" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Portico Transcatheter Heart Valve" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_004
+:DEV_004 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_004 ;
+         :hasManufacturer :MAN_006 ;
+         :hasRiskClass :RC_ClassIIb ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-004" ;
+         :hasDeviceName "SYNERGY Stent System" ;
+         :hasDeviceTypeText "ImplantableActiveDevice" ;
+         :hasIntendedPurpose "Drug-eluting coronary stent" ;
+         :hasUDIDI "(01)08714729002817" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "SYNERGY Stent System" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_005
+:DEV_005 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_005 ;
+         :hasManufacturer :MAN_006 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-005" ;
+         :hasDeviceName "ACUITY X4 Quadripolar LV Lead" ;
+         :hasDeviceTypeText "ActiveImplant" ;
+         :hasIntendedPurpose "Cardiac resynchronization therapy lead" ;
+         :hasUDIDI "(01)08714729004873" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "ACUITY X4 Quadripolar LV Lead" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_006
+:DEV_006 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasManufacturer :MAN_004 ;
+         :hasRiskClass :RC_ClassIIb ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-006" ;
+         :hasDeviceName "STELLAREX Drug-Coated Balloon" ;
+         :hasDeviceTypeText "SingleUseDevice" ;
+         :hasIntendedPurpose "Peripheral artery drug-coated angioplasty balloon" ;
+         :hasUDIDI "(01)08718998000001" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "STELLAREX Drug-Coated Balloon" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_007
+:DEV_007 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_006 ;
+         :hasManufacturer :MAN_003 ;
+         :hasRiskClass :RC_ClassIIa ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-007" ;
+         :hasDeviceName "ACUSON Sequoia Ultrasound" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "Diagnostic ultrasound imaging system" ;
+         :hasUDIDI "(01)04054839450001" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "ACUSON Sequoia Ultrasound" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_008
+:DEV_008 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_020 ;
+         :hasManufacturer :MAN_003 ;
+         :hasRiskClass :RC_ClassIIa ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-008" ;
+         :hasDeviceName "MAGNETOM Vida MRI System" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "Magnetic resonance imaging system 3T" ;
+         :hasUDIDI "(01)04054839460002" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "MAGNETOM Vida MRI System" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_009
+:DEV_009 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_007 ;
+         :hasManufacturer :MAN_010 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-009" ;
+         :hasDeviceName "Persona Knee System" ;
+         :hasDeviceTypeText "ImplantableDevice" ;
+         :hasIntendedPurpose "Total knee arthroplasty implant system" ;
+         :hasUDIDI "(01)07612345001001" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Persona Knee System" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_010
+:DEV_010 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_008 ;
+         :hasManufacturer :MAN_007 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-010" ;
+         :hasDeviceName "TRITON Total Hip System" ;
+         :hasDeviceTypeText "ImplantableDevice" ;
+         :hasIntendedPurpose "Ceramic-on-ceramic total hip replacement" ;
+         :hasUDIDI "(01)09876543002002" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "TRITON Total Hip System" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_011
+:DEV_011 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_017 ;
+         :hasManufacturer :MAN_011 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-011" ;
+         :hasDeviceName "Iluvien Intravitreal Implant" ;
+         :hasDeviceTypeText "ActiveImplant" ;
+         :hasIntendedPurpose "Sustained-release fluocinolone acetonide ocular implant" ;
+         :hasUDIDI "(01)05391520001011" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Iluvien Intravitreal Implant" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_012
+:DEV_012 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_009 ;
+         :hasManufacturer :MAN_008 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-012" ;
+         :hasDeviceName "Viva Cardiac Resynchronization Defibrillator" ;
+         :hasDeviceTypeText "ActiveImplant" ;
+         :hasIntendedPurpose "Cardiac resynchronization therapy with defibrillation" ;
+         :hasUDIDI "(01)04012099001012" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Viva Cardiac Resynchronization Defibrillator" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_013
+:DEV_013 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_010 ;
+         :hasManufacturer :MAN_012 ;
+         :hasRiskClass :RC_ClassIIb ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-013" ;
+         :hasDeviceName "ATERA Mechanical Ventilator" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "ICU mechanical ventilator with pressure and volume modes" ;
+         :hasUDIDI "(01)04046539001013" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "ATERA Mechanical Ventilator" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_014
+:DEV_014 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasManufacturer :MAN_004 ;
+         :hasRiskClass :RC_ClassIIa ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-014" ;
+         :hasDeviceName "Lumify Portable Ultrasound" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "Handheld point-of-care ultrasound probe" ;
+         :hasUDIDI "(01)08718998001014" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Lumify Portable Ultrasound" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_015
+:DEV_015 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_018 ;
+         :hasManufacturer :MAN_013 ;
+         :hasRiskClass :RC_ClassIIb ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-015" ;
+         :hasDeviceName "Hemodialysis Machine 5008S" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "High-volume online hemodiafiltration machine" ;
+         :hasUDIDI "(01)04547597001015" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Hemodialysis Machine 5008S" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_016
+:DEV_016 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_011 ;
+         :hasManufacturer :MAN_005 ;
+         :hasRiskClass :RC_ClassC ;
+         :underRegulatoryFramework :RF_IVDR ;
+         :hasDeviceID "DEV-016" ;
+         :hasDeviceName "cobas e 801 Immunoassay Analyzer" ;
+         :hasDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIntendedPurpose "Automated immunoassay analyzer for clinical laboratory" ;
+         :hasUDIDI "(01)04015630001016" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "true"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "cobas e 801 Immunoassay Analyzer" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_017
+:DEV_017 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_012 ;
+         :hasManufacturer :MAN_005 ;
+         :hasRiskClass :RC_ClassC ;
+         :underRegulatoryFramework :RF_IVDR ;
+         :hasDeviceID "DEV-017" ;
+         :hasDeviceName "cobas SARS-CoV-2 RT-PCR Test" ;
+         :hasDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIntendedPurpose "Molecular diagnostic test for SARS-CoV-2 detection" ;
+         :hasUDIDI "(01)04015630001017" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "true"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "cobas SARS-CoV-2 RT-PCR Test" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_018
+:DEV_018 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_013 ;
+         :hasManufacturer :MAN_015 ;
+         :hasRiskClass :RC_ClassD ;
+         :underRegulatoryFramework :RF_IVDR ;
+         :hasDeviceID "DEV-018" ;
+         :hasDeviceName "VIDAS HIV DUO Ultra" ;
+         :hasDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIntendedPurpose "Combined HIV Ag/Ab detection assay" ;
+         :hasUDIDI "(01)03760027001018" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "true"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "VIDAS HIV DUO Ultra" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_019
+:DEV_019 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasManufacturer :MAN_014 ;
+         :hasRiskClass :RC_ClassC ;
+         :underRegulatoryFramework :RF_IVDR ;
+         :hasDeviceID "DEV-019" ;
+         :hasDeviceName "PROGENSA PCA3 Assay" ;
+         :hasDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIntendedPurpose "Urine-based prostate cancer diagnosis assay" ;
+         :hasUDIDI "(01)07000087001019" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "true"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "PROGENSA PCA3 Assay" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_020
+:DEV_020 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasManufacturer :MAN_002 ;
+         :hasRiskClass :RC_ClassD ;
+         :underRegulatoryFramework :RF_IVDR ;
+         :hasDeviceID "DEV-020" ;
+         :hasDeviceName "Harmony Prenatal Test" ;
+         :hasDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIntendedPurpose "Non-invasive prenatal testing (NIPT) for aneuploidies" ;
+         :hasUDIDI "(01)00800002001020" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "true"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Harmony Prenatal Test" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_021
+:DEV_021 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_014 ;
+         :hasManufacturer :MAN_009 ;
+         :hasRiskClass :RC_ClassC ;
+         :underRegulatoryFramework :RF_IVDR ;
+         :hasDeviceID "DEV-021" ;
+         :hasDeviceName "OPTIGA Glucose Monitoring System" ;
+         :hasDeviceTypeText "SelfTestDevice" ;
+         :hasIntendedPurpose "Continuous glucose monitor for patients with diabetes" ;
+         :hasUDIDI "(01)07300000001021" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "true"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "OPTIGA Glucose Monitoring System" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_022
+:DEV_022 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasManufacturer :MAN_009 ;
+         :hasRiskClass :RC_ClassIIa ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-022" ;
+         :hasDeviceName "BeneVision N1 Patient Monitor" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "Portable patient monitor for vital signs" ;
+         :hasUDIDI "(01)07300000001022" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "BeneVision N1 Patient Monitor" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_023
+:DEV_023 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_019 ;
+         :hasManufacturer :MAN_008 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-023" ;
+         :hasDeviceName "Tivoli II Cochlear Implant" ;
+         :hasDeviceTypeText "ActiveImplant" ;
+         :hasIntendedPurpose "Active cochlear implant for sensorineural hearing loss" ;
+         :hasUDIDI "(01)04012099001023" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Tivoli II Cochlear Implant" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_024
+:DEV_024 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasIncident :INC_015 ;
+         :hasManufacturer :MAN_002 ;
+         :hasRiskClass :RC_ClassIIb ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-024" ;
+         :hasDeviceName "Infusion Pump Plum 360" ;
+         :hasDeviceTypeText "ActiveDevice" ;
+         :hasIntendedPurpose "Large volume infusion pump with drug library" ;
+         :hasUDIDI "(01)00800002001024" ;
+         :isActive "true"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "false"^^xsd:boolean ;
+         :isReusable "true"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "Infusion Pump Plum 360" .
+
+
+###  http://example.org/medical-devices-ontology#DEV_025
+:DEV_025 rdf:type owl:NamedIndividual ,
+                  :MedicalDevice ;
+         :hasManufacturer :MAN_011 ;
+         :hasRiskClass :RC_ClassIII ;
+         :underRegulatoryFramework :RF_MDR ;
+         :hasDeviceID "DEV-025" ;
+         :hasDeviceName "ValveXpert Transcatheter Mitral Valve" ;
+         :hasDeviceTypeText "ImplantableDevice" ;
+         :hasIntendedPurpose "Transcatheter mitral valve replacement system" ;
+         :hasUDIDI "(01)05391520001025" ;
+         :isActive "false"^^xsd:boolean ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :isReusable "false"^^xsd:boolean ;
+         rdfs:comment "A medical device from the dataset." ;
+         rdfs:label "ValveXpert Transcatheter Mitral Valve" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_001
+:FSCA_001 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Open ;
+          :hasFSCAType :FT_SafetyAlert ;
+          :hasActionDate "2024-02-01"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 850 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000001" ;
+          :hasFSCADescription "Safety alert issued to all implanting centres regarding anticoagulation protocol update for HeartMate 3 to reduce device thrombosis risk. INR target range revised to 2.0–3.0." ;
+          :hasFSCAID "FSCA-001" ;
+          :hasScope "All HeartMate 3 LVAD units implanted since 2020" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-001" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_002
+:FSCA_002 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_Recall ;
+          :hasActionDate "2024-02-28"^^xsd:date ;
+          :hasClosureDate "2024-05-31"^^xsd:date ;
+          :hasCountriesAffected "EU-wide + UK" ;
+          :hasDevicesAffected 1240 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000002" ;
+          :hasFSCADescription "Voluntary recall of affected Micra AV lots due to premature battery depletion. Replacement units provided. 97% of affected devices successfully replaced." ;
+          :hasFSCAID "FSCA-002" ;
+          :hasScope "Micra AV lots manufactured between 2022-09 and 2023-03" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-002" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_003
+:FSCA_003 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_InSituCorrection ;
+          :hasActionDate "2024-03-15"^^xsd:date ;
+          :hasClosureDate "2024-06-30"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 320 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000003" ;
+          :hasFSCADescription "Enhanced deployment training and updated IFU for Portico valve implantation technique. New implantation checklist mandatory for all TAVI centres." ;
+          :hasFSCAID "FSCA-003" ;
+          :hasScope "Portico THV sizes 23mm and 25mm from lots before 2023-11" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-003" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_004
+:FSCA_004 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Open ;
+          :hasFSCAType :FT_SafetyAlert ;
+          :hasActionDate "2024-04-10"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 2100 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000004" ;
+          :hasFSCADescription "Safety communication to implanting cardiologists regarding optimal fixation technique for ACUITY X4 lead. Enhanced fluoroscopy verification protocol at implantation." ;
+          :hasFSCAID "FSCA-004" ;
+          :hasScope "All ACUITY X4 quadripolar LV leads" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-004" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_005
+:FSCA_005 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_InSituCorrection ;
+          :hasActionDate "2024-05-20"^^xsd:date ;
+          :hasClosureDate "2024-09-30"^^xsd:date ;
+          :hasCountriesAffected "EU-wide + Switzerland" ;
+          :hasDevicesAffected 780 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000005" ;
+          :hasFSCADescription "Enhanced surveillance programme: annual DEXA scan and serum particle monitoring for patients with affected tibial inserts. Patients contacted individually." ;
+          :hasFSCAID "FSCA-005" ;
+          :hasScope "Persona Knee tibial inserts with lot numbers PN-2019-* to PN-2021-*" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-005" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_006
+:FSCA_006 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Open ;
+          :hasFSCAType :FT_Recall ;
+          :hasActionDate "2024-05-30"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 540 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000006" ;
+          :hasFSCADescription "Urgent safety recall due to elevated metal ion levels. Revision surgery recommended for patients with serum cobalt >7 ppb or symptomatic ALTR. Replacement implants provided." ;
+          :hasFSCAID "FSCA-006" ;
+          :hasScope "TRITON Total Hip ceramic-on-ceramic 28mm heads from lots TH-2020-* and TH-2021-*" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-006" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_007
+:FSCA_007 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_UserNotice ;
+          :hasActionDate "2024-05-25"^^xsd:date ;
+          :hasClosureDate "2024-07-31"^^xsd:date ;
+          :hasCountriesAffected "EU-wide + UK" ;
+          :hasDevicesAffected 4300 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000007" ;
+          :hasFSCADescription "Urgent safety notice regarding MRI scanning protocol. Updated MRI-conditional guidelines issued. Mandatory reprogramming required before any MRI scan. Programmer software update v3.2 released." ;
+          :hasFSCAID "FSCA-007" ;
+          :hasScope "All Viva CRT-D devices" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-007" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_008
+:FSCA_008 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_Recall ;
+          :hasActionDate "2024-06-05"^^xsd:date ;
+          :hasClosureDate "2024-08-15"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 180 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000008" ;
+          :hasFSCADescription "Software recall: mandatory update to version 2.2.0 resolving FiO2 calibration error. Biomedical engineers visited all affected units within 14 days. Field service documentation required." ;
+          :hasFSCAID "FSCA-008" ;
+          :hasScope "ATERA ventilators with software version 2.1.3" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-008" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_009
+:FSCA_009 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_UserNotice ;
+          :hasActionDate "2024-06-20"^^xsd:date ;
+          :hasClosureDate "2024-09-30"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 620 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000009" ;
+          :hasFSCADescription "Customer field notification regarding biotin interference in TSH assay. Updated sample preparation protocol and interference screening algorithm released via software update 4.1.2." ;
+          :hasFSCAID "FSCA-009" ;
+          :hasScope "All cobas e 801 immunoassay analysers" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-009" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_010
+:FSCA_010 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_Recall ;
+          :hasActionDate "2024-06-30"^^xsd:date ;
+          :hasClosureDate "2024-08-31"^^xsd:date ;
+          :hasCountriesAffected "EU-wide + Norway + Iceland" ;
+          :hasDevicesAffected 12500 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000010" ;
+          :hasFSCADescription "Immediate quarantine and replacement of affected reagent lots. Reflex testing protocol issued. All positive results from affected lots to be re-confirmed. New primer design covering BA.2.86 released." ;
+          :hasFSCAID "FSCA-010" ;
+          :hasScope "cobas SARS-CoV-2 RT-PCR reagent lot numbers CV-2024-0312 to CV-2024-0318" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-010" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_011
+:FSCA_011 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Open ;
+          :hasFSCAType :FT_InSituCorrection ;
+          :hasActionDate "2024-08-01"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 3200 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000011" ;
+          :hasFSCADescription "Enhanced calibration protocol issued. Firmware update v1.8.5 mandatory improving temperature compensation algorithm. Patients instructed to perform confirmatory finger-stick at glucose readings <4.5 or >13.9 mmol/L." ;
+          :hasFSCAID "FSCA-011" ;
+          :hasScope "All OPTIGA CGM sensors from manufacturing site GE-SGP-2" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-011" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_012
+:FSCA_012 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_Recall ;
+          :hasActionDate "2024-08-20"^^xsd:date ;
+          :hasClosureDate "2024-10-31"^^xsd:date ;
+          :hasCountriesAffected "EU-wide + UK + Norway" ;
+          :hasDevicesAffected 2870 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000012" ;
+          :hasFSCADescription "Urgent recall and remote software update. Drug library version 4.3.0 deployed correcting decimal point error. All units verified by biomedical engineering before return to clinical use." ;
+          :hasFSCAID "FSCA-012" ;
+          :hasScope "Plum 360 infusion pumps with drug library version 4.2.1" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-012" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_013
+:FSCA_013 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Open ;
+          :hasFSCAType :FT_SafetyAlert ;
+          :hasActionDate "2024-09-10"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 420 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000013" ;
+          :hasFSCADescription "Safety communication regarding outflow graft kinking risk. Updated surgical technique for graft routing issued. Mandatory follow-up CT at 6 months for patients with affected lot numbers." ;
+          :hasFSCAID "FSCA-013" ;
+          :hasScope "All HeartMate 3 LVAD units with outflow graft lot OG-2022-*" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-013" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_014
+:FSCA_014 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Closed ;
+          :hasFSCAType :FT_UserNotice ;
+          :hasActionDate "2024-09-25"^^xsd:date ;
+          :hasClosureDate "2024-12-31"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 1100 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000014" ;
+          :hasFSCADescription "Updated IFU regarding post-operative infection prophylaxis protocol. Extended topical antibiotic course (14 days) mandatory post-insertion. Healthcare professionals notified via direct mail and implanting centre visits." ;
+          :hasFSCAID "FSCA-014" ;
+          :hasScope "All Iluvien intravitreal implants" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-014" .
+
+
+###  http://example.org/medical-devices-ontology#FSCA_015
+:FSCA_015 rdf:type owl:NamedIndividual ,
+                   :CorrectiveAction ;
+          :hasFSCAStatus :FS_Open ;
+          :hasFSCAType :FT_InSituCorrection ;
+          :hasActionDate "2024-10-01"^^xsd:date ;
+          :hasCountriesAffected "EU-wide" ;
+          :hasDevicesAffected 890 ;
+          :hasEUDAMEDFSCARef "EU-FSCA-2024-000015" ;
+          :hasFSCADescription "Security patch 3.0.1 mandatory deployment disabling unrestricted web interface access. Network segmentation guidance issued to hospital IT departments. Penetration test report provided to competent authorities." ;
+          :hasFSCAID "FSCA-015" ;
+          :hasScope "All 5008S hemodialysis machines with network connectivity module v2.x" ;
+          rdfs:comment "A field safety corrective action from the dataset." ;
+          rdfs:label "FSCA-015" .
+
+
+###  http://example.org/medical-devices-ontology#FS_Closed
+:FS_Closed rdf:type owl:NamedIndividual ,
+                    :FSCAStatus ;
+           rdfs:comment "An individual representing a corrective action status." ;
+           rdfs:label "Closed" .
+
+
+###  http://example.org/medical-devices-ontology#FS_Open
+:FS_Open rdf:type owl:NamedIndividual ,
+                  :FSCAStatus ;
+         rdfs:comment "An individual representing a corrective action status." ;
+         rdfs:label "Open" .
+
+
+###  http://example.org/medical-devices-ontology#FT_InSituCorrection
+:FT_InSituCorrection rdf:type owl:NamedIndividual ,
+                              :InSituCorrection ;
+                     rdfs:comment "An individual representing a corrective action type." ;
+                     rdfs:label "InSituCorrection" .
+
+
+###  http://example.org/medical-devices-ontology#FT_Recall
+:FT_Recall rdf:type owl:NamedIndividual ,
+                    :Recall ;
+           rdfs:comment "An individual representing a corrective action type." ;
+           rdfs:label "Recall" .
+
+
+###  http://example.org/medical-devices-ontology#FT_SafetyAlert
+:FT_SafetyAlert rdf:type owl:NamedIndividual ,
+                         :SafetyAlert ;
+                rdfs:comment "An individual representing a corrective action type." ;
+                rdfs:label "SafetyAlert" .
+
+
+###  http://example.org/medical-devices-ontology#FT_UserNotice
+:FT_UserNotice rdf:type owl:NamedIndividual ,
+                        :UserNotice ;
+               rdfs:comment "An individual representing a corrective action type." ;
+               rdfs:label "UserNotice" .
+
+
+###  http://example.org/medical-devices-ontology#INC_001
+:INC_001 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_001 ;
+         :relatedRisk :RSK_003 ;
+         :reportedBy :MAN_001 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Germany" ;
+         :hasDetectionDate "2024-01-10"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000001" ;
+         :hasEventDate "2024-01-08"^^xsd:date ;
+         :hasIncidentDescription "Patient implanted with HeartMate 3 LVAD developed ischemic stroke 6 months post-implant. Device thrombus confirmed by echocardiography." ;
+         :hasIncidentID "INC-001" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Serious patient injury - embolic stroke" ;
+         :hasPatientAge 58 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-01-15"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-001" .
+
+
+###  http://example.org/medical-devices-ontology#INC_002
+:INC_002 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_002 ;
+         :relatedRisk :RSK_009 ;
+         :reportedBy :MAN_001 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "France" ;
+         :hasDetectionDate "2024-02-01"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000002" ;
+         :hasEventDate "2024-01-29"^^xsd:date ;
+         :hasIncidentDescription "Micra AV pacemaker reached elective replacement indicator 14 months earlier than expected longevity specification." ;
+         :hasIncidentID "INC-002" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Device malfunction - premature battery depletion" ;
+         :hasPatientAge 72 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-02-03"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-002" .
+
+
+###  http://example.org/medical-devices-ontology#INC_003
+:INC_003 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_003 ;
+         :relatedRisk :RSK_005 ;
+         :reportedBy :MAN_002 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Italy" ;
+         :hasDetectionDate "2024-02-18"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000003" ;
+         :hasEventDate "2024-02-15"^^xsd:date ;
+         :hasIncidentDescription "Portico valve showed paravalvular leak grade III due to partial migration 2 weeks post-TAVI procedure." ;
+         :hasIncidentID "INC-003" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Surgical intervention required - valve re-anchoring" ;
+         :hasPatientAge 67 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-02-20"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-003" .
+
+
+###  http://example.org/medical-devices-ontology#INC_004
+:INC_004 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :relatedRisk :RSK_002 ;
+         :reportedBy :MAN_006 ;
+         :correctiveActionTaken "false"^^xsd:boolean ;
+         :hasCountryReported "Spain" ;
+         :hasDetectionDate "2024-03-03"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000004" ;
+         :hasEventDate "2024-02-28"^^xsd:date ;
+         :hasIncidentDescription "SYNERGY stent fracture detected on angiography 18 months post-implant causing in-stent restenosis." ;
+         :hasIncidentID "INC-004" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Device malfunction - stent fracture" ;
+         :hasPatientAge 55 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-03-05"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-004" .
+
+
+###  http://example.org/medical-devices-ontology#INC_005
+:INC_005 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_004 ;
+         :relatedRisk :RSK_006 ;
+         :reportedBy :MAN_006 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Netherlands" ;
+         :hasDetectionDate "2024-03-16"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000005" ;
+         :hasEventDate "2024-03-12"^^xsd:date ;
+         :hasIncidentDescription "ACUITY X4 lead dislodgement to right ventricle requiring fluoroscopy-guided repositioning." ;
+         :hasIncidentID "INC-005" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Surgical intervention required - lead extraction" ;
+         :hasPatientAge 63 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-03-18"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-005" .
+
+
+###  http://example.org/medical-devices-ontology#INC_006
+:INC_006 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :relatedRisk :RSK_001 ;
+         :reportedBy :MAN_003 ;
+         :correctiveActionTaken "false"^^xsd:boolean ;
+         :hasCountryReported "Belgium" ;
+         :hasDetectionDate "2024-04-01"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000006" ;
+         :hasEventDate "2024-04-01"^^xsd:date ;
+         :hasIncidentDescription "ACUSON Sequoia ultrasound system froze mid-examination. Emergency shutdown required; patient examination incomplete." ;
+         :hasIncidentID "INC-006" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Device malfunction - complete system failure" ;
+         :hasReportDate "2024-04-02"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-006" .
+
+
+###  http://example.org/medical-devices-ontology#INC_007
+:INC_007 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_005 ;
+         :relatedRisk :RSK_019 ;
+         :reportedBy :MAN_010 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Sweden" ;
+         :hasDetectionDate "2024-04-10"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000007" ;
+         :hasEventDate "2024-03-01"^^xsd:date ;
+         :hasIncidentDescription "Persona knee tibial insert showing accelerated polyethylene wear with metallosis confirmed at 3-year revision surgery." ;
+         :hasIncidentID "INC-007" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Patient harm - adverse tissue reaction" ;
+         :hasPatientAge 70 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-04-14"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-007" .
+
+
+###  http://example.org/medical-devices-ontology#INC_008
+:INC_008 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_006 ;
+         :relatedRisk :RSK_020 ;
+         :reportedBy :MAN_007 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Denmark" ;
+         :hasDetectionDate "2024-04-25"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000008" ;
+         :hasEventDate "2024-04-20"^^xsd:date ;
+         :hasIncidentDescription "TRITON hip patient presented with elevated serum cobalt (18 ppb). Adverse local tissue reaction (ALTR) confirmed by MRI." ;
+         :hasIncidentID "INC-008" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Patient harm - cobalt toxicity" ;
+         :hasPatientAge 65 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-04-28"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-008" .
+
+
+###  http://example.org/medical-devices-ontology#INC_009
+:INC_009 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_007 ;
+         :relatedRisk :RSK_013 ;
+         :reportedBy :MAN_008 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Poland" ;
+         :hasDetectionDate "2024-05-04"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000009" ;
+         :hasEventDate "2024-05-03"^^xsd:date ;
+         :hasIncidentDescription "Viva CRT-D delivered inappropriate ICD therapy during MRI scan despite MRI-conditional programming. Patient experienced pain and syncope." ;
+         :hasIncidentID "INC-009" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Inappropriate shock delivery" ;
+         :hasPatientAge 68 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-05-06"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-009" .
+
+
+###  http://example.org/medical-devices-ontology#INC_010
+:INC_010 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_008 ;
+         :relatedRisk :RSK_010 ;
+         :reportedBy :MAN_012 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Germany" ;
+         :hasDetectionDate "2024-05-19"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000010" ;
+         :hasEventDate "2024-05-19"^^xsd:date ;
+         :hasIncidentDescription "ATERA ventilator software version 2.1.3 delivered FiO2 6% lower than set value for patients in ARDS protocol. 3 patients affected." ;
+         :hasIncidentID "INC-010" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Device malfunction - incorrect FiO2 delivery" ;
+         :hasReportDate "2024-05-20"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-010" .
+
+
+###  http://example.org/medical-devices-ontology#INC_011
+:INC_011 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_009 ;
+         :relatedRisk :RSK_014 ;
+         :reportedBy :MAN_005 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "France" ;
+         :hasDetectionDate "2024-06-01"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000011" ;
+         :hasEventDate "2024-05-28"^^xsd:date ;
+         :hasIncidentDescription "cobas e 801 thyroid-stimulating hormone (TSH) assay reported false positive results (>10 mIU/L) in 12 euthyroid patients due to biotin interference." ;
+         :hasIncidentID "INC-011" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Diagnostic error - false positive TSH results" ;
+         :hasReportDate "2024-06-03"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-011" .
+
+
+###  http://example.org/medical-devices-ontology#INC_012
+:INC_012 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_010 ;
+         :relatedRisk :RSK_015 ;
+         :reportedBy :MAN_005 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Spain" ;
+         :hasDetectionDate "2024-06-13"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000012" ;
+         :hasEventDate "2024-06-10"^^xsd:date ;
+         :hasIncidentDescription "cobas SARS-CoV-2 assay failed to detect Omicron BA.2.86 subvariant in 7 samples confirmed positive by sequencing. Lot-specific issue." ;
+         :hasIncidentID "INC-012" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Diagnostic error - false negative SARS-CoV-2" ;
+         :hasReportDate "2024-06-15"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-012" .
+
+
+###  http://example.org/medical-devices-ontology#INC_013
+:INC_013 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :relatedRisk :RSK_015 ;
+         :reportedBy :MAN_015 ;
+         :correctiveActionTaken "false"^^xsd:boolean ;
+         :hasCountryReported "Germany" ;
+         :hasDetectionDate "2024-06-29"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000013" ;
+         :hasEventDate "2024-06-25"^^xsd:date ;
+         :hasIncidentDescription "VIDAS HIV DUO Ultra failed to detect HIV-1 group O infection in seroconversion panel. Patient missed early treatment window." ;
+         :hasIncidentID "INC-013" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Diagnostic error - false negative HIV" ;
+         :hasReportDate "2024-07-01"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-013" .
+
+
+###  http://example.org/medical-devices-ontology#INC_014
+:INC_014 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_011 ;
+         :relatedRisk :RSK_014 ;
+         :reportedBy :MAN_009 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Netherlands" ;
+         :hasDetectionDate "2024-07-15"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000014" ;
+         :hasEventDate "2024-07-10"^^xsd:date ;
+         :hasIncidentDescription "OPTIGA CGM sensor reported glucose 3.8 mmol/L while laboratory reference showed 14.2 mmol/L. Patient delayed insulin administration." ;
+         :hasIncidentID "INC-014" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Patient harm - hyperglycaemic event" ;
+         :hasPatientAge 45 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-07-18"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-014" .
+
+
+###  http://example.org/medical-devices-ontology#INC_015
+:INC_015 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_012 ;
+         :relatedRisk :RSK_010 ;
+         :reportedBy :MAN_002 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Italy" ;
+         :hasDetectionDate "2024-08-04"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000015" ;
+         :hasEventDate "2024-08-04"^^xsd:date ;
+         :hasIncidentDescription "Plum 360 infusion pump delivered 10x heparin dose due to software decimal point error in drug library version 4.2.1." ;
+         :hasIncidentID "INC-015" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Patient harm - drug overdose" ;
+         :hasPatientAge 81 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-08-05"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-015" .
+
+
+###  http://example.org/medical-devices-ontology#INC_016
+:INC_016 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_013 ;
+         :relatedRisk :RSK_004 ;
+         :reportedBy :MAN_001 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "United Kingdom" ;
+         :hasDetectionDate "2024-08-18"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000016" ;
+         :hasEventDate "2024-08-15"^^xsd:date ;
+         :hasIncidentDescription "HeartMate 3 patient developed severe haemolysis (LDH >2000 U/L) associated with outflow graft kinking confirmed by CT." ;
+         :hasIncidentID "INC-016" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Patient harm - haemolytic anaemia" ;
+         :hasPatientAge 52 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-08-20"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-016" .
+
+
+###  http://example.org/medical-devices-ontology#INC_017
+:INC_017 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_014 ;
+         :relatedRisk :RSK_007 ;
+         :reportedBy :MAN_011 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "France" ;
+         :hasDetectionDate "2024-08-30"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000017" ;
+         :hasEventDate "2024-08-25"^^xsd:date ;
+         :hasIncidentDescription "Iluvien implant required surgical removal due to device-related endophthalmitis confirmed by vitreous culture." ;
+         :hasIncidentID "INC-017" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Surgical intervention - implant removal" ;
+         :hasPatientAge 54 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-09-02"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-017" .
+
+
+###  http://example.org/medical-devices-ontology#INC_018
+:INC_018 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :hasCorrectiveAction :FSCA_015 ;
+         :relatedRisk :RSK_018 ;
+         :reportedBy :MAN_013 ;
+         :correctiveActionTaken "true"^^xsd:boolean ;
+         :hasCountryReported "Germany" ;
+         :hasDetectionDate "2024-09-14"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000018" ;
+         :hasEventDate "2024-09-12"^^xsd:date ;
+         :hasIncidentDescription "5008S hemodialysis machine web interface exposed to hospital internal network. Unauthorised session accessed alarm configuration." ;
+         :hasIncidentID "INC-018" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Cybersecurity incident - unauthorised access" ;
+         :hasReportDate "2024-09-15"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-018" .
+
+
+###  http://example.org/medical-devices-ontology#INC_019
+:INC_019 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :relatedRisk :RSK_001 ;
+         :reportedBy :MAN_008 ;
+         :correctiveActionTaken "false"^^xsd:boolean ;
+         :hasCountryReported "Sweden" ;
+         :hasDetectionDate "2024-09-30"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000019" ;
+         :hasEventDate "2024-09-28"^^xsd:date ;
+         :hasIncidentDescription "Tivoli II cochlear implant failed to respond to initial activation programming. Sound processor replacement resolved the issue." ;
+         :hasIncidentID "INC-019" ;
+         :hasIncidentTypeText "NearMissIncident" ;
+         :hasOutcome "Near-miss - device not activated post-surgery" ;
+         :hasPatientAge 71 ;
+         :hasPatientSex "Male" ;
+         :hasReportDate "2024-10-01"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-019" .
+
+
+###  http://example.org/medical-devices-ontology#INC_020
+:INC_020 rdf:type owl:NamedIndividual ,
+                  :Incident ;
+         :relatedRisk :RSK_011 ;
+         :reportedBy :MAN_003 ;
+         :correctiveActionTaken "false"^^xsd:boolean ;
+         :hasCountryReported "Belgium" ;
+         :hasDetectionDate "2024-10-12"^^xsd:date ;
+         :hasEUDAMEDIncidentRef "EU-INC-2024-000020" ;
+         :hasEventDate "2024-10-10"^^xsd:date ;
+         :hasIncidentDescription "MAGNETOM Vida MRI caused localised skin burn (1st degree) at anterior electrode lead in patient with DBS system not declared prior to scan." ;
+         :hasIncidentID "INC-020" ;
+         :hasIncidentTypeText "SeriousIncident" ;
+         :hasOutcome "Patient harm - SAR heating injury" ;
+         :hasPatientAge 38 ;
+         :hasPatientSex "Female" ;
+         :hasReportDate "2024-10-14"^^xsd:date ;
+         rdfs:comment "An incident from the dataset." ;
+         rdfs:label "INC-020" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_001
+:MAN_001 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "IE/2017/001234" ;
+         :hasCompetentAuthority "Health Products Regulatory Authority (HPRA)" ;
+         :hasContactEmail "regulatory@medtronic.com" ;
+         :hasCountry "Ireland" ;
+         :hasEUDAMEDSRN "SRN-IE-MED-0001" ;
+         :hasManufacturerID "MAN-001" ;
+         :hasManufacturerName "Medtronic plc" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Medtronic plc" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_002
+:MAN_002 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "DE/2017/005678" ;
+         :hasCompetentAuthority "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)" ;
+         :hasContactEmail "regulatory@abbott.com" ;
+         :hasCountry "Germany" ;
+         :hasEUDAMEDSRN "SRN-DE-MED-0002" ;
+         :hasManufacturerID "MAN-002" ;
+         :hasManufacturerName "Abbott Medical Devices" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Abbott Medical Devices" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_003
+:MAN_003 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "DE/2017/009012" ;
+         :hasCompetentAuthority "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)" ;
+         :hasContactEmail "regulatory@siemens-healthineers.com" ;
+         :hasCountry "Germany" ;
+         :hasEUDAMEDSRN "SRN-DE-MED-0003" ;
+         :hasManufacturerID "MAN-003" ;
+         :hasManufacturerName "Siemens Healthineers AG" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Siemens Healthineers AG" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_004
+:MAN_004 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "NL/2017/003456" ;
+         :hasCompetentAuthority "Rijksinstituut voor Volksgezondheid en Milieu (RIVM)" ;
+         :hasContactEmail "regulatory@philips.com" ;
+         :hasCountry "Netherlands" ;
+         :hasEUDAMEDSRN "SRN-NL-MED-0004" ;
+         :hasManufacturerID "MAN-004" ;
+         :hasManufacturerName "Philips Medical Systems" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Philips Medical Systems" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_005
+:MAN_005 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "DE/2017/007890" ;
+         :hasCompetentAuthority "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)" ;
+         :hasContactEmail "regulatory@roche.com" ;
+         :hasCountry "Germany" ;
+         :hasEUDAMEDSRN "SRN-DE-MED-0005" ;
+         :hasManufacturerID "MAN-005" ;
+         :hasManufacturerName "Roche Diagnostics GmbH" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Roche Diagnostics GmbH" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_006
+:MAN_006 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "IE/2017/002345" ;
+         :hasCompetentAuthority "Health Products Regulatory Authority (HPRA)" ;
+         :hasContactEmail "regulatory@bsci.com" ;
+         :hasCountry "Ireland" ;
+         :hasEUDAMEDSRN "SRN-IE-MED-0006" ;
+         :hasManufacturerID "MAN-006" ;
+         :hasManufacturerName "Boston Scientific Corporation" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Boston Scientific Corporation" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_007
+:MAN_007 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "NL/2017/006789" ;
+         :hasCompetentAuthority "Rijksinstituut voor Volksgezondheid en Milieu (RIVM)" ;
+         :hasContactEmail "regulatory@stryker.com" ;
+         :hasCountry "Netherlands" ;
+         :hasEUDAMEDSRN "SRN-NL-MED-0007" ;
+         :hasManufacturerID "MAN-007" ;
+         :hasManufacturerName "Stryker Corporation" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Stryker Corporation" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_008
+:MAN_008 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "DE/2017/004567" ;
+         :hasCompetentAuthority "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)" ;
+         :hasContactEmail "regulatory@biotronik.com" ;
+         :hasCountry "Germany" ;
+         :hasEUDAMEDSRN "SRN-DE-MED-0008" ;
+         :hasManufacturerID "MAN-008" ;
+         :hasManufacturerName "Biotronik SE & Co. KG" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Biotronik SE & Co. KG" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_009
+:MAN_009 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "SE/2017/008901" ;
+         :hasCompetentAuthority "Läkemedelsverket (MPA)" ;
+         :hasContactEmail "regulatory@gehealthcare.com" ;
+         :hasCountry "Sweden" ;
+         :hasEUDAMEDSRN "SRN-SE-MED-0009" ;
+         :hasManufacturerID "MAN-009" ;
+         :hasManufacturerName "GE HealthCare Technologies" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "GE HealthCare Technologies" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_010
+:MAN_010 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "CH/2017/001122" ;
+         :hasCompetentAuthority "Swissmedic" ;
+         :hasContactEmail "regulatory@zimmerbiomet.com" ;
+         :hasCountry "Switzerland" ;
+         :hasEUDAMEDSRN "SRN-CH-MED-0010" ;
+         :hasManufacturerID "MAN-010" ;
+         :hasManufacturerName "Zimmer Biomet Holdings" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Zimmer Biomet Holdings" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_011
+:MAN_011 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "UK/2017/003344" ;
+         :hasCompetentAuthority "Medicines and Healthcare products Regulatory Agency (MHRA)" ;
+         :hasContactEmail "regulatory@livanova.com" ;
+         :hasCountry "United Kingdom" ;
+         :hasEUDAMEDSRN "SRN-UK-MED-0011" ;
+         :hasManufacturerID "MAN-011" ;
+         :hasManufacturerName "LivaNova PLC" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "LivaNova PLC" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_012
+:MAN_012 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "DE/2017/005566" ;
+         :hasCompetentAuthority "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)" ;
+         :hasContactEmail "regulatory@draeger.com" ;
+         :hasCountry "Germany" ;
+         :hasEUDAMEDSRN "SRN-DE-MED-0012" ;
+         :hasManufacturerID "MAN-012" ;
+         :hasManufacturerName "Drägerwerk AG & Co. KGaA" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Drägerwerk AG & Co. KGaA" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_013
+:MAN_013 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "FR/2017/007788" ;
+         :hasCompetentAuthority "Agence nationale de sécurité du médicament (ANSM)" ;
+         :hasContactEmail "regulatory@nipro.com" ;
+         :hasCountry "France" ;
+         :hasEUDAMEDSRN "SRN-FR-MED-0013" ;
+         :hasManufacturerID "MAN-013" ;
+         :hasManufacturerName "Nipro Corporation" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Nipro Corporation" .
+
+
+###  http://example.org/medical-devices-ontology#MAN_014
+:MAN_014 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "BE/2017/009900" ;
+         :hasCompetentAuthority "Agence fédérale des médicaments et des produits de santé (AFMPS)" ;
+         :hasContactEmail "regulatory@hologic.com" ;
+         :hasCountry "Belgium" ;
+         :hasEUDAMEDSRN "SRN-BE-MED-0014" ;
+         :hasManufacturerID "MAN-014" ;
+         :hasManufacturerName "Hologic Inc." ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "Hologic Inc." .
+
+
+###  http://example.org/medical-devices-ontology#MAN_015
+:MAN_015 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasAuthorizationNumber "FR/2017/002211" ;
+         :hasCompetentAuthority "Agence nationale de sécurité du médicament (ANSM)" ;
+         :hasContactEmail "regulatory@biomerieux.com" ;
+         :hasCountry "France" ;
+         :hasEUDAMEDSRN "SRN-FR-MED-0015" ;
+         :hasManufacturerID "MAN-015" ;
+         :hasManufacturerName "bioMérieux SA" ;
+         rdfs:comment "A manufacturer from the dataset." ;
+         rdfs:label "bioMérieux SA" .
+
+
+###  http://example.org/medical-devices-ontology#RC_ClassC
+:RC_ClassC rdf:type owl:NamedIndividual ,
+                    :RiskClass ;
+           rdfs:comment "An individual representing a risk class value." ;
+           rdfs:label "ClassC" .
+
+
+###  http://example.org/medical-devices-ontology#RC_ClassD
+:RC_ClassD rdf:type owl:NamedIndividual ,
+                    :RiskClass ;
+           rdfs:comment "An individual representing a risk class value." ;
+           rdfs:label "ClassD" .
+
+
+###  http://example.org/medical-devices-ontology#RC_ClassIII
+:RC_ClassIII rdf:type owl:NamedIndividual ,
+                      :RiskClass ;
+             rdfs:comment "An individual representing a risk class value." ;
+             rdfs:label "ClassIII" .
+
+
+###  http://example.org/medical-devices-ontology#RC_ClassIIa
+:RC_ClassIIa rdf:type owl:NamedIndividual ,
+                      :RiskClass ;
+             rdfs:comment "An individual representing a risk class value." ;
+             rdfs:label "ClassIIa" .
+
+
+###  http://example.org/medical-devices-ontology#RC_ClassIIb
+:RC_ClassIIb rdf:type owl:NamedIndividual ,
+                      :RiskClass ;
+             rdfs:comment "An individual representing a risk class value." ;
+             rdfs:label "ClassIIb" .
+
+
+###  http://example.org/medical-devices-ontology#RF_IVDR
+:RF_IVDR rdf:type owl:NamedIndividual ,
+                  :RegulatoryFramework ;
+         rdfs:comment "An individual representing a regulatory framework." ;
+         rdfs:label "IVDR" .
+
+
+###  http://example.org/medical-devices-ontology#RF_MDR
+:RF_MDR rdf:type owl:NamedIndividual ,
+                 :RegulatoryFramework ;
+        rdfs:comment "An individual representing a regulatory framework." ;
+        rdfs:label "MDR" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_001
+:RSK_001 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveDevice" ;
+         :hasIMDRFCode "A0101" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Device Failure" ;
+         :hasRiskDescription "Complete loss of electrical function leading to device shutdown" ;
+         :hasRiskID "RSK-001" ;
+         :hasRiskName "Device failure - electrical" ;
+         :hasRiskTypeText "MalfunctionRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Device failure - electrical" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_002
+:RSK_002 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "A0102" ;
+         :hasProbabilityText "Medium" ;
+         :hasRiskCategoryText "Device Failure" ;
+         :hasRiskDescription "Structural failure of mechanical components under physiological load" ;
+         :hasRiskID "RSK-002" ;
+         :hasRiskName "Device failure - mechanical" ;
+         :hasRiskTypeText "MalfunctionRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Device failure - mechanical" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_003
+:RSK_003 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableActiveDevice" ;
+         :hasIMDRFCode "A0201" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Thrombus formation on device surface causing embolic events" ;
+         :hasRiskID "RSK-003" ;
+         :hasRiskName "Thrombosis - device-related" ;
+         :hasRiskTypeText "InjuryRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Thrombosis - device-related" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_004
+:RSK_004 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveImplant" ;
+         :hasIMDRFCode "A0202" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Mechanical destruction of red blood cells by pump mechanism" ;
+         :hasRiskID "RSK-004" ;
+         :hasRiskName "Hemolysis - pump-induced" ;
+         :hasRiskTypeText "InjuryRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Hemolysis - pump-induced" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_005
+:RSK_005 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "A0301" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Device Performance" ;
+         :hasRiskDescription "Unintended displacement of implant from intended anatomical position" ;
+         :hasRiskID "RSK-005" ;
+         :hasRiskName "Device migration - implant" ;
+         :hasRiskTypeText "MalfunctionRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Device migration - implant" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_006
+:RSK_006 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveImplant" ;
+         :hasIMDRFCode "A0302" ;
+         :hasProbabilityText "Medium" ;
+         :hasRiskCategoryText "Device Performance" ;
+         :hasRiskDescription "Cardiac lead displacement requiring repositioning or replacement" ;
+         :hasRiskID "RSK-006" ;
+         :hasRiskName "Lead dislodgement" ;
+         :hasRiskTypeText "MalfunctionRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Lead dislodgement" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_007
+:RSK_007 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "A0401" ;
+         :hasProbabilityText "Medium" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Device-related infection at implantation site or systemic sepsis" ;
+         :hasRiskID "RSK-007" ;
+         :hasRiskName "Infection - device-related" ;
+         :hasRiskTypeText "InfectionRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Infection - device-related" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_008
+:RSK_008 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "A0402" ;
+         :hasProbabilityText "High" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Bacterial biofilm accumulation on implant surface resistant to antibiotics" ;
+         :hasRiskID "RSK-008" ;
+         :hasRiskName "Biofilm formation" ;
+         :hasRiskTypeText "InfectionRisk" ;
+         :hasSeverityText "Moderate" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Biofilm formation" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_009
+:RSK_009 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveImplant" ;
+         :hasIMDRFCode "A0501" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Device Failure" ;
+         :hasRiskDescription "Battery end-of-life earlier than specified, risking therapy interruption" ;
+         :hasRiskID "RSK-009" ;
+         :hasRiskName "Battery depletion - premature" ;
+         :hasRiskTypeText "MalfunctionRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Battery depletion - premature" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_010
+:RSK_010 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveDevice" ;
+         :hasIMDRFCode "A0502" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Device Failure" ;
+         :hasRiskDescription "Software bug causing incorrect dosing, alarming, or therapy delivery" ;
+         :hasRiskID "RSK-010" ;
+         :hasRiskName "Software malfunction" ;
+         :hasRiskTypeText "SoftwareRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Software malfunction" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_011
+:RSK_011 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveDevice" ;
+         :hasIMDRFCode "A0601" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Unintended ionising radiation exposure exceeding therapeutic dose" ;
+         :hasRiskID "RSK-011" ;
+         :hasRiskName "Radiation overdose" ;
+         :hasRiskTypeText "RadiationRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Radiation overdose" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_012
+:RSK_012 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "A0701" ;
+         :hasProbabilityText "High" ;
+         :hasRiskCategoryText "Device Performance" ;
+         :hasRiskDescription "Metallic implant causing MRI image artifacts compromising diagnostics" ;
+         :hasRiskID "RSK-012" ;
+         :hasRiskName "Metallic artifact - MRI" ;
+         :hasRiskTypeText "InterferenceRisk" ;
+         :hasSeverityText "Moderate" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Metallic artifact - MRI" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_013
+:RSK_013 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveImplant" ;
+         :hasIMDRFCode "A0702" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Device Performance" ;
+         :hasRiskDescription "External EMI affecting pacemaker/ICD sensing and pacing functions" ;
+         :hasRiskID "RSK-013" ;
+         :hasRiskName "Electromagnetic interference" ;
+         :hasRiskTypeText "InterferenceRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Electromagnetic interference" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_014
+:RSK_014 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIMDRFCode "B0101" ;
+         :hasProbabilityText "Medium" ;
+         :hasRiskCategoryText "Diagnostic Error" ;
+         :hasRiskDescription "IVD test returns positive result in absence of target condition" ;
+         :hasRiskID "RSK-014" ;
+         :hasRiskName "False positive result" ;
+         :hasRiskTypeText "DiagnosticRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "False positive result" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_015
+:RSK_015 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIMDRFCode "B0102" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Diagnostic Error" ;
+         :hasRiskDescription "IVD test fails to detect target condition in affected individual" ;
+         :hasRiskID "RSK-015" ;
+         :hasRiskName "False negative result" ;
+         :hasRiskTypeText "DiagnosticRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "False negative result" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_016
+:RSK_016 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIMDRFCode "B0201" ;
+         :hasProbabilityText "Medium" ;
+         :hasRiskCategoryText "Diagnostic Error" ;
+         :hasRiskDescription "Reagent reacts with non-target analyte producing incorrect result" ;
+         :hasRiskID "RSK-016" ;
+         :hasRiskName "Cross-reactivity" ;
+         :hasRiskTypeText "DiagnosticRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Cross-reactivity" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_017
+:RSK_017 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "InVitroDiagnosticDevice" ;
+         :hasIMDRFCode "B0301" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Product Quality" ;
+         :hasRiskDescription "Reagent lot contamination leading to systematic diagnostic errors" ;
+         :hasRiskID "RSK-017" ;
+         :hasRiskName "Contamination - reagent" ;
+         :hasRiskTypeText "ContaminationRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Contamination - reagent" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_018
+:RSK_018 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ActiveDevice" ;
+         :hasIMDRFCode "B0401" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Device Safety" ;
+         :hasRiskDescription "Exploitable software vulnerability enabling unauthorized device access" ;
+         :hasRiskID "RSK-018" ;
+         :hasRiskName "Cybersecurity vulnerability" ;
+         :hasRiskTypeText "CybersecurityRisk" ;
+         :hasSeverityText "Critical" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Cybersecurity vulnerability" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_019
+:RSK_019 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "C0101" ;
+         :hasProbabilityText "Medium" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Particulate debris from bearing surfaces causing adverse tissue reaction" ;
+         :hasRiskID "RSK-019" ;
+         :hasRiskName "Wear debris - joint implant" ;
+         :hasRiskTypeText "MaterialRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Wear debris - joint implant" .
+
+
+###  http://example.org/medical-devices-ontology#RSK_020
+:RSK_020 rdf:type owl:NamedIndividual ,
+                  :Risk ;
+         :hasAffectedDeviceTypeText "ImplantableDevice" ;
+         :hasIMDRFCode "C0201" ;
+         :hasProbabilityText "Low" ;
+         :hasRiskCategoryText "Patient Harm" ;
+         :hasRiskDescription "Metallic ion release from corrosion causing local or systemic toxicity" ;
+         :hasRiskID "RSK-020" ;
+         :hasRiskName "Corrosion - metallic implant" ;
+         :hasRiskTypeText "MaterialRisk" ;
+         :hasSeverityText "Serious" ;
+         rdfs:comment "A risk from the dataset." ;
+         rdfs:label "Corrosion - metallic implant" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

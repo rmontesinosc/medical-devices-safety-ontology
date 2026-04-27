@@ -1,0 +1,3025 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://example.org/medical-devices-ontology", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en" : "Medical Devices Safety Ontology"
+    },
+    "iri" : "http://example.org/medical-devices-ontology",
+    "version" : "1.0",
+    "author" : [ "Rafael Montesinos Cano" ],
+    "description" : {
+      "en" : "An ontology for modelling medical devices, safety incidents, risk classifications, manufacturers, regulatory frameworks and corrective actions in the medical device domain."
+    },
+    "labels" : {
+      "en" : "Medical Devices Safety Ontology"
+    },
+    "comments" : {
+      "en" : "Ontology for representing medical devices, incidents, risks, manufacturers, regulatory frameworks and corrective actions."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Rafael Montesinos Cano",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Medical Devices Safety Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "13",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "94",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "97",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  }, {
+    "id" : "100",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "115",
+    "type" : "owl:Class"
+  }, {
+    "id" : "116",
+    "type" : "owl:Class"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "102",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "104",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "122",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "110",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://example.org/medical-devices-ontology#ProbabilityLevel",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProbabilityLevel",
+      "en" : "Probability Level"
+    },
+    "comment" : {
+      "en" : "A probability level associated with a risk"
+    },
+    "id" : "3"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#RegulatoryFramework",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RegulatoryFramework",
+      "en" : "Regulatory Framework"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#RF_IVDR",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a regulatory framework."
+      },
+      "labels" : {
+        "IRI-based" : "RF_IVDR",
+        "undefined" : "IVDR"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RF_MDR",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a regulatory framework."
+      },
+      "labels" : {
+        "IRI-based" : "RF_MDR",
+        "undefined" : "MDR"
+      }
+    } ],
+    "comment" : {
+      "en" : "A European regulatory framework applicable to a medical device"
+    },
+    "id" : "10"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#InVitroDiagnosticDevice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InVitroDiagnosticDevice",
+      "en" : "In Vitro Diagnostic Device"
+    },
+    "comment" : {
+      "en" : "A medical device used for in vitro diagnostic purposes"
+    },
+    "id" : "11",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#MedicalDevice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "en",
+        "value" : "https://schema.org/MedicalDevice",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MedicalDevice",
+      "en" : "Medical Device"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_012",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_012",
+        "undefined" : "Viva Cardiac Resynchronization Defibrillator"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_013",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_013",
+        "undefined" : "ATERA Mechanical Ventilator"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_010",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_010",
+        "undefined" : "TRITON Total Hip System"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_011",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_011",
+        "undefined" : "Iluvien Intravitreal Implant"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_018",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_018",
+        "undefined" : "VIDAS HIV DUO Ultra"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_019",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_019",
+        "undefined" : "PROGENSA PCA3 Assay"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_016",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_016",
+        "undefined" : "cobas e 801 Immunoassay Analyzer"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_017",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_017",
+        "undefined" : "cobas SARS-CoV-2 RT-PCR Test"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_014",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_014",
+        "undefined" : "Lumify Portable Ultrasound"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_015",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_015",
+        "undefined" : "Hemodialysis Machine 5008S"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_001",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_001",
+        "undefined" : "HeartMate 3 LVAD"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_023",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_023",
+        "undefined" : "Tivoli II Cochlear Implant"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_002",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_002",
+        "undefined" : "Micra AV Transcatheter Pacing System"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_024",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_024",
+        "undefined" : "Infusion Pump Plum 360"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_021",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_021",
+        "undefined" : "OPTIGA Glucose Monitoring System"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_022",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_022",
+        "undefined" : "BeneVision N1 Patient Monitor"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_020",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_020",
+        "undefined" : "Harmony Prenatal Test"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_009",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_009",
+        "undefined" : "Persona Knee System"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_007",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_007",
+        "undefined" : "ACUSON Sequoia Ultrasound"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_008",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_008",
+        "undefined" : "MAGNETOM Vida MRI System"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_005",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_005",
+        "undefined" : "ACUITY X4 Quadripolar LV Lead"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_006",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_006",
+        "undefined" : "STELLAREX Drug-Coated Balloon"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_003",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_003",
+        "undefined" : "Portico Transcatheter Heart Valve"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_025",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_025",
+        "undefined" : "ValveXpert Transcatheter Mitral Valve"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#DEV_004",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A medical device from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "DEV_004",
+        "undefined" : "SYNERGY Stent System"
+      }
+    } ],
+    "subClasses" : [ "14", "15", "11", "16", "17" ],
+    "comment" : {
+      "en" : "A medical device represented in the ontology"
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#FSCAType",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FSCAType",
+      "en" : "FSCA Type"
+    },
+    "subClasses" : [ "19", "20", "21", "22" ],
+    "comment" : {
+      "en" : "A type of field safety corrective action"
+    },
+    "id" : "18"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#DeviceType",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DeviceType",
+      "en" : "Device Type"
+    },
+    "comment" : {
+      "en" : "A category describing the type of a medical device"
+    },
+    "id" : "23"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "32",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "35",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "36",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#Manufacturer",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "en",
+        "value" : "http://xmlns.com/foaf/0.1/Organization",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Manufacturer",
+      "en" : "Manufacturer"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_008",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_008",
+        "undefined" : "Biotronik SE & Co. KG"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_009",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_009",
+        "undefined" : "GE HealthCare Technologies"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_006",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_006",
+        "undefined" : "Boston Scientific Corporation"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_007",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_007",
+        "undefined" : "Stryker Corporation"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_011",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_011",
+        "undefined" : "LivaNova PLC"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_001",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_001",
+        "undefined" : "Medtronic plc"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_012",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_012",
+        "undefined" : "Drägerwerk AG & Co. KGaA"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_010",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_010",
+        "undefined" : "Zimmer Biomet Holdings"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_004",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_004",
+        "undefined" : "Philips Medical Systems"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_015",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_015",
+        "undefined" : "bioMérieux SA"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_005",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_005",
+        "undefined" : "Roche Diagnostics GmbH"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_002",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_002",
+        "undefined" : "Abbott Medical Devices"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_013",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_013",
+        "undefined" : "Nipro Corporation"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_003",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_003",
+        "undefined" : "Siemens Healthineers AG"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#MAN_014",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A manufacturer from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "MAN_014",
+        "undefined" : "Hologic Inc."
+      }
+    } ],
+    "comment" : {
+      "en" : "An organization responsible for manufacturing a medical device"
+    },
+    "id" : "25"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#Recall",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Recall",
+      "en" : "Recall"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#FT_Recall",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a corrective action type."
+      },
+      "labels" : {
+        "IRI-based" : "FT_Recall",
+        "undefined" : "Recall"
+      }
+    } ],
+    "comment" : {
+      "en" : "A corrective action involving the recall of affected products"
+    },
+    "id" : "22",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "46",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "13",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "57",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "58",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "60",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "62",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "64",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#UserNotice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UserNotice",
+      "en" : "User Notice"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#FT_UserNotice",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a corrective action type."
+      },
+      "labels" : {
+        "IRI-based" : "FT_UserNotice",
+        "undefined" : "UserNotice"
+      }
+    } ],
+    "comment" : {
+      "en" : "A corrective action consisting of a notice or communication to users"
+    },
+    "id" : "21",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#CorrectiveAction",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CorrectiveAction",
+      "en" : "Corrective Action"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_001",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_001",
+        "undefined" : "FSCA-001"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_012",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_012",
+        "undefined" : "FSCA-012"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_002",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_002",
+        "undefined" : "FSCA-002"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_013",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_013",
+        "undefined" : "FSCA-013"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_014",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_014",
+        "undefined" : "FSCA-014"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_003",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_003",
+        "undefined" : "FSCA-003"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_015",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_015",
+        "undefined" : "FSCA-015"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_004",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_004",
+        "undefined" : "FSCA-004"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_010",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_010",
+        "undefined" : "FSCA-010"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_011",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_011",
+        "undefined" : "FSCA-011"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_009",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_009",
+        "undefined" : "FSCA-009"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_005",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_005",
+        "undefined" : "FSCA-005"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_006",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_006",
+        "undefined" : "FSCA-006"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_007",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_007",
+        "undefined" : "FSCA-007"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FSCA_008",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A field safety corrective action from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "FSCA_008",
+        "undefined" : "FSCA-008"
+      }
+    } ],
+    "comment" : {
+      "en" : "An action taken in response to an incident"
+    },
+    "id" : "8"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "78",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "50",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "81",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#ImplantableDevice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ImplantableDevice",
+      "en" : "Implantable Device"
+    },
+    "comment" : {
+      "en" : "medical device intended to be implanted in the human body"
+    },
+    "id" : "14",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#ActiveDevice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActiveDevice",
+      "en" : "Active Device"
+    },
+    "comment" : {
+      "en" : "A medical device that depends on a source of energy for its operation"
+    },
+    "id" : "17",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "52",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "90",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "92",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "71",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "93",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "85",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "67",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "48",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "87",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#RiskType",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RiskType",
+      "en" : "Risk Type"
+    },
+    "comment" : {
+      "en" : "A conceptual type used to classify risks"
+    },
+    "id" : "94"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#ReusableDevice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReusableDevice",
+      "en" : "Reusable Device"
+    },
+    "comment" : {
+      "en" : "A medical device intended for repeated use"
+    },
+    "id" : "15",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#FSCAStatus",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FSCAStatus",
+      "en" : "FSCA Status"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#FS_Open",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a corrective action status."
+      },
+      "labels" : {
+        "IRI-based" : "FS_Open",
+        "undefined" : "Open"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#FS_Closed",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a corrective action status."
+      },
+      "labels" : {
+        "IRI-based" : "FS_Closed",
+        "undefined" : "Closed"
+      }
+    } ],
+    "comment" : {
+      "en" : "The status of a corrective action"
+    },
+    "id" : "97"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#OpenCorrectiveAction",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OpenCorrectiveAction",
+      "en" : "Open Corrective Action"
+    },
+    "comment" : {
+      "en" : "A corrective action whose status is open"
+    },
+    "id" : "98"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#ManagedIncident",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ManagedIncident",
+      "en" : "Managed Incident"
+    },
+    "comment" : {
+      "en" : "An incident that has an associated corrective action"
+    },
+    "id" : "100"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#HighRiskDevice",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HighRiskDevice",
+      "en" : "High-Risk Device"
+    },
+    "comment" : {
+      "en" : "A medical device considered high risk according to regulatory classification"
+    },
+    "id" : "16",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#SafetyAlert",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SafetyAlert",
+      "en" : "Safety Alert"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#FT_SafetyAlert",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a corrective action type."
+      },
+      "labels" : {
+        "IRI-based" : "FT_SafetyAlert",
+        "undefined" : "SafetyAlert"
+      }
+    } ],
+    "comment" : {
+      "en" : "A corrective action consisting of a safety alert"
+    },
+    "id" : "19",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#RiskCategory",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RiskCategory",
+      "en" : "Risk Category"
+    },
+    "comment" : {
+      "en" : "A conceptual category used to classify risks"
+    },
+    "id" : "115"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#IncidentType",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "IncidentType",
+      "en" : "Incident Type"
+    },
+    "comment" : {
+      "en" : "A category describing the type of an incident"
+    },
+    "id" : "116"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "107",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "34",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "114",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "102",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "104",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#Severity",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Severity",
+      "en" : "Severity"
+    },
+    "comment" : {
+      "en" : "A severity level associated with a risk"
+    },
+    "id" : "122"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "54",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "110",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#Risk",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Risk",
+      "en" : "Risk"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_004",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_004",
+        "undefined" : "Hemolysis - pump-induced"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_015",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_015",
+        "undefined" : "False negative result"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_016",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_016",
+        "undefined" : "Cross-reactivity"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_005",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_005",
+        "undefined" : "Device migration - implant"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_002",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_002",
+        "undefined" : "Device failure - mechanical"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_013",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_013",
+        "undefined" : "Electromagnetic interference"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_003",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_003",
+        "undefined" : "Thrombosis - device-related"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_014",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_014",
+        "undefined" : "False positive result"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_011",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_011",
+        "undefined" : "Radiation overdose"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_001",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_001",
+        "undefined" : "Device failure - electrical"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_012",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_012",
+        "undefined" : "Metallic artifact - MRI"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_020",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_020",
+        "undefined" : "Corrosion - metallic implant"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_010",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_010",
+        "undefined" : "Software malfunction"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_019",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_019",
+        "undefined" : "Wear debris - joint implant"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_008",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_008",
+        "undefined" : "Biofilm formation"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_009",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_009",
+        "undefined" : "Battery depletion - premature"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_017",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_017",
+        "undefined" : "Contamination - reagent"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_006",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_006",
+        "undefined" : "Lead dislodgement"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_018",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_018",
+        "undefined" : "Cybersecurity vulnerability"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RSK_007",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "A risk from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "RSK_007",
+        "undefined" : "Infection - device-related"
+      }
+    } ],
+    "comment" : {
+      "en" : "A risk associated with a medical device"
+    },
+    "id" : "38"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#RiskClass",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RiskClass",
+      "en" : "Risk Class"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#RC_ClassIII",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a risk class value."
+      },
+      "labels" : {
+        "IRI-based" : "RC_ClassIII",
+        "undefined" : "ClassIII"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RC_ClassD",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a risk class value."
+      },
+      "labels" : {
+        "IRI-based" : "RC_ClassD",
+        "undefined" : "ClassD"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RC_ClassC",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a risk class value."
+      },
+      "labels" : {
+        "IRI-based" : "RC_ClassC",
+        "undefined" : "ClassC"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RC_ClassIIb",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a risk class value."
+      },
+      "labels" : {
+        "IRI-based" : "RC_ClassIIb",
+        "undefined" : "ClassIIb"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#RC_ClassIIa",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a risk class value."
+      },
+      "labels" : {
+        "IRI-based" : "RC_ClassIIa",
+        "undefined" : "ClassIIa"
+      }
+    } ],
+    "comment" : {
+      "en" : "A regulatory risk class assigned to a medical device"
+    },
+    "id" : "2"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#InSituCorrection",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InSituCorrection",
+      "en" : "In Situ Correction"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#FT_InSituCorrection",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An individual representing a corrective action type."
+      },
+      "labels" : {
+        "IRI-based" : "FT_InSituCorrection",
+        "undefined" : "InSituCorrection"
+      }
+    } ],
+    "comment" : {
+      "en" : "A corrective action performed directly on the affected device or system"
+    },
+    "id" : "20",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#Incident",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Incident",
+      "en" : "Incident"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/medical-devices-ontology#INC_010",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_010",
+        "undefined" : "INC-010"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_020",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_020",
+        "undefined" : "INC-020"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_001",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_001",
+        "undefined" : "INC-001"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_012",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_012",
+        "undefined" : "INC-012"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_011",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_011",
+        "undefined" : "INC-011"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_007",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_007",
+        "undefined" : "INC-007"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_018",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_018",
+        "undefined" : "INC-018"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_006",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_006",
+        "undefined" : "INC-006"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_017",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_017",
+        "undefined" : "INC-017"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_009",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_009",
+        "undefined" : "INC-009"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_019",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_019",
+        "undefined" : "INC-019"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_008",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_008",
+        "undefined" : "INC-008"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_014",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_014",
+        "undefined" : "INC-014"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_003",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_003",
+        "undefined" : "INC-003"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_002",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_002",
+        "undefined" : "INC-002"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_013",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_013",
+        "undefined" : "INC-013"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_016",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_016",
+        "undefined" : "INC-016"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_005",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_005",
+        "undefined" : "INC-005"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_004",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_004",
+        "undefined" : "INC-004"
+      }
+    }, {
+      "iri" : "http://example.org/medical-devices-ontology#INC_015",
+      "baseIri" : "http://example.org/medical-devices-ontology",
+      "comment" : {
+        "undefined" : "An incident from the dataset."
+      },
+      "labels" : {
+        "IRI-based" : "INC_015",
+        "undefined" : "INC-015"
+      }
+    } ],
+    "comment" : {
+      "en" : "A reported incident involving in a medical device"
+    },
+    "id" : "7"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "49",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "66",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "82",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "84",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "86",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "101",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "103",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "109",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "113",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "118",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "119",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "120",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "121",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "123",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "124",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "125",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "126",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "127",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "128",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "129",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "130",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "131",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "132",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "133",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "135",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://example.org/medical-devices-ontology#hasRiskClass",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasRiskClass",
+      "en" : "has risk class"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Links a medical device to its regulatory risk class"
+    },
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#isActive",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "isActive",
+      "en" : "is active"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Indicates whether the device is active"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasCorrectiveAction",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasCorrectiveAction",
+      "en" : "has corrective action"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Links an incident to the corrective action taken in response"
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasIncidentDescription",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasIncidentDescription",
+      "en" : "has incident description"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the description of an incident"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#reportedBy",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "reportedBy",
+      "en" : "reported by"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Links an incident to the reporting manufacturer"
+    },
+    "attributes" : [ "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasCountry",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasCountry",
+      "en" : "has country"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the country where a manufacturer is located"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasEUDAMEDFSCARef",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "hasEUDAMEDFSCARef",
+      "en" : "has EUDAMED FSCA reference"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the EUDAMED reference of a corrective action"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasCountryReported",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "hasCountryReported",
+      "en" : "has country reported"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the country where the incident was reported"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasAuthorizationNumber",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "hasAuthorizationNumber",
+      "en" : "has authorization number"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the regulatory authorization number of a manufacturer"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasIMDRFCode",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "hasIMDRFCode",
+      "en" : "has IMDRF code"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the IMDRF code assigned to a risk"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasContactEmail",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "hasContactEmail",
+      "en" : "has contact email"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the contact email of a manufacturer"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasRiskDescription",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "hasRiskDescription",
+      "en" : "has risk description"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the description of a risk"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#isIVD",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "isIVD",
+      "en" : "Indicates whether the device is an in vitro diagnostic device"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "49"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasSeverityText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "hasSeverityText",
+      "en" : "has severity text"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the textual value of the severity level"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#correctiveActionTaken",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "54",
+    "label" : {
+      "IRI-based" : "correctiveActionTaken",
+      "en" : "corrective action taken"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Indicates whether a corrective action was taken for the incident"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "53"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasManufacturerName",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "hasManufacturerName",
+      "en" : "has manufacturer name"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the name of a manufacturer"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "59"
+  }, {
+    "range" : "18",
+    "domain" : "19",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "65"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasProbabilityText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "hasProbabilityText",
+      "undefined" : "has probability text"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the textual value of the probability level"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "66"
+  }, {
+    "range" : "18",
+    "domain" : "21",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "68"
+  }, {
+    "range" : "18",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasScope",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "hasScope",
+      "en" : "has scope"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the scope of a corrective action"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasManufacturerID",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "hasManufacturerID",
+      "en" : "has manufacturer ID"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the identifier of a manufacturer."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasPatientSex",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasPatientSex",
+      "en" : "has patient sex"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the sex of the patient associated with an incident"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "73"
+  }, {
+    "range" : "1",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "74"
+  }, {
+    "range" : "1",
+    "domain" : "15",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "75"
+  }, {
+    "range" : "1",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "76"
+  }, {
+    "range" : "1",
+    "domain" : "16",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "77"
+  }, {
+    "range" : "1",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "79"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasDetectionDate",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "62",
+    "label" : {
+      "IRI-based" : "hasDetectionDate",
+      "en" : "has detection date"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the date on which an incident was detected."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "82"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasEUDAMEDSRN",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "hasEUDAMEDSRN",
+      "en" : "has EUDAMED SRN"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the EUDAMED SRN of a manufacturer."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "83"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasReportDate",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "hasReportDate",
+      "en" : "has report date"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the date on which an incident was reported."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "84"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasRiskCategoryText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "87",
+    "label" : {
+      "IRI-based" : "hasRiskCategoryText",
+      "en" : "has risk category text"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the textual value of the risk category"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "86"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#isImplantable",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "78",
+    "label" : {
+      "IRI-based" : "isImplantable",
+      "en" : "is implantable"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Indicates whether the device is implantabl"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "88"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasOutcome",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "hasOutcome",
+      "en" : "has outcome"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "89"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasDevicesAffected",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "58",
+    "label" : {
+      "IRI-based" : "hasDevicesAffected",
+      "en" : "has devices affected"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the number of devices affected by a corrective action"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "91"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasRiskID",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "92",
+    "label" : {
+      "IRI-based" : "hasRiskID",
+      "en" : "has risk ID"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the identifier of a risk"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "95"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#underRegulatoryFramework",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "underRegulatoryFramework",
+      "en" : "under regulatory framework"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Links a medical device to the regulatory framework that applies to it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "96"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#subjectToCorrectiveAction",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "subjectToCorrectiveAction",
+      "en" : "Links a medical device to a corrective action associated through an incident"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "99"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasCompetentAuthority",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "102",
+    "label" : {
+      "IRI-based" : "hasCompetentAuthority",
+      "en" : "has competent authority"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "Stores the competent authority associated with a manufacturer"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "101"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasCountriesAffected",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "104",
+    "label" : {
+      "IRI-based" : "hasCountriesAffected",
+      "en" : "has countries affected"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the countries affected by a corrective action"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "103"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasEUDAMEDIncidentRef",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "hasEUDAMEDIncidentRef",
+      "en" : "has EUDAMED incident reference"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the EUDAMED reference of an incident"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "105"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasAffectedDeviceTypeText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "107",
+    "label" : {
+      "IRI-based" : "hasAffectedDeviceTypeText",
+      "en" : "has affected device type text"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the textual value of the affected device type"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "106"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasIncidentID",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "hasIncidentID",
+      "en" : "has incident ID"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the identifier of an incident."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasActionDate",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "110",
+    "label" : {
+      "IRI-based" : "hasActionDate",
+      "en" : "has action date"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the date on which a corrective action started"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "109"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasDeviceTypeText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "60",
+    "label" : {
+      "IRI-based" : "hasDeviceTypeText",
+      "en" : "has device type text"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Stores the textual value of the device type"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "111"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasFSCADescription",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "hasFSCADescription",
+      "en" : "has FSCA description"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the description of a corrective action"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "112"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasClosureDate",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "114",
+    "label" : {
+      "IRI-based" : "hasClosureDate",
+      "en" : "has closure date"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the date on which a corrective action was closed"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "113"
+  }, {
+    "range" : "18",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "117"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasFSCAStatus",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "97",
+    "label" : {
+      "IRI-based" : "hasFSCAStatus",
+      "en" : "has FSCA status"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Links a corrective action to its FSCA status"
+    },
+    "attributes" : [ "object" ],
+    "id" : "118"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#isReusable",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "isReusable",
+      "en" : "is reusable"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Indicates whether the device is reusable."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "119"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasFSCAID",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "hasFSCAID",
+      "en" : "has FSCA ID"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Stores the identifier of a field safety corrective action"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "120"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasPatientAge",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "hasPatientAge",
+      "en" : "has patient age"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the age of the patient associated with an incident"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "121"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasIncidentTypeText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "hasIncidentTypeText",
+      "undefined" : "has incident type text"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the textual value of the incident type"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "123"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasDeviceID",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "64",
+    "label" : {
+      "IRI-based" : "hasDeviceID",
+      "en" : "has device ID"
+    },
+    "cardinality" : "1",
+    "domain" : "1",
+    "comment" : {
+      "en" : "Stores the identifier of a manufacturer"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "124"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasDeviceName",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "hasDeviceName",
+      "en" : "has device name"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Stores the commercial name of a medical device"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "125"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasFSCAType",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "hasFSCAType",
+      "en" : "has FSCA type"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Links a corrective action to its FSCA type"
+    },
+    "attributes" : [ "object" ],
+    "id" : "126"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasEventDate",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "hasEventDate",
+      "en" : "has event date"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Stores the date on which the incident event occurred."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "127"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#relatedRisk",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "relatedRisk",
+      "en" : "related risk"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Links an incident to a risk"
+    },
+    "attributes" : [ "object" ],
+    "id" : "128"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasIncident",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasIncident",
+      "en" : "has incident"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Links a medical device to an incident associated with it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "129"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasRiskTypeText",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "93",
+    "label" : {
+      "IRI-based" : "hasRiskTypeText",
+      "en" : "has risk type text"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the textual value of the risk type"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "130"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasIntendedPurpose",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "hasIntendedPurpose",
+      "en" : "has intended purpose"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Stores the intended purpose of a medical device"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "131"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasUDIDI",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "81",
+    "label" : {
+      "IRI-based" : "hasUDIDI",
+      "en" : "has UDI-DI"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Stores the UDI-DI of a medical device"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "132"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasManufacturer",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasManufacturer",
+      "en" : "has manufacturer"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Links a medical device to its manufacturer"
+    },
+    "attributes" : [ "object" ],
+    "id" : "133"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#hasRiskName",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "hasRiskName",
+      "en" : "has risk name"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Stores the name of a risk"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "134"
+  }, {
+    "iri" : "http://example.org/medical-devices-ontology#affectsDeviceType",
+    "baseIri" : "http://example.org/medical-devices-ontology",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "affectsDeviceType",
+      "en" : "affects device type"
+    },
+    "domain" : "38",
+    "attributes" : [ "object" ],
+    "id" : "135"
+  } ]
+}
